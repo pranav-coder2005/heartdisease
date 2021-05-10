@@ -41,12 +41,12 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 
 # FUNCTION
 def user_report():
-  age = st.sidebar.slider('Age', 0,200, 50 )
-  trestbps = st.sidebar.slider('Resting Blood Pressure', 60,200, 100 )
-  chol = st.sidebar.slider('Cholestrol', 100,500, 200 )
-  thalach = st.sidebar.slider('Maximum Heart Rate Achieved', 60,250, 100 )
-  oldpeak = st.sidebar.slider('ST Depression Induced by Exercise', 0.0,5.0, 1.60 )
-  ca = st.sidebar.slider('Number of major vessels coloured by Flouroscopy', 0,5, 1 )
+  age = st.sidebar.slider('Age', 0,200, 75 )
+  trestbps = st.sidebar.slider('Resting Blood Pressure', 60,200, 111 )
+  chol = st.sidebar.slider('Cholestrol', 100,500, 330 )
+  thalach = st.sidebar.slider('Maximum Heart Rate Achieved', 60,250, 146 )
+  oldpeak = st.sidebar.slider('ST Depression Induced by Exercise', 0.0,5.0, 2.50 )
+  ca = st.sidebar.slider('Number of major vessels coloured by Flouroscopy', 0,5, 2 )
   
 
   user_report_data = {
@@ -156,7 +156,7 @@ output=''
 if user_result[0]==0:
   output = 'Congratulations, you do not have any heart diseases. .'
 else:
-  output = 'Unfortunately, it is likely that you may be having a heart disease..'
+  output = 'Unfortunately, it is likely that you may be having a heart disease.'
 st.title(output)
 st.subheader('Accuracy: ')
 st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
