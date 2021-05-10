@@ -24,7 +24,7 @@ st.markdown('''
 ''')
 st.write('---')
 
-df = pd.read_csv(r'C:\Users\MILIND\Documents\Python projects\heart.csv')
+df = pd.read_csv(r'heart.csv')
 
 # HEADINGS
 st.title('Heart Disease Detector')
