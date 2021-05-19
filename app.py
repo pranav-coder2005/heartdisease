@@ -161,3 +161,5 @@ else:
 st.title(output)
 st.subheader('Accuracy: ')
 st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
+
+st.subheader('Lets raise awareness about Cardiovascular Health')
