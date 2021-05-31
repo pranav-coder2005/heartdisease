@@ -27,20 +27,20 @@ st.write('---')
 
 df = pd.read_csv(r'heart.csv')
 
-# HEADINGS
+
 st.title('Heart Disease Detector')
 st.sidebar.header('Patient Data')
 st.subheader('Training Dataset')
 st.write(df.describe())
 
 
-# X AND Y DATA
+
 x = df.drop(['Outcome'], axis = 1)
 y = df.iloc[:, -1]
 x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random_state = 0)
 
 
-# FUNCTION
+
 def user_report():
   age = st.sidebar.slider('Age', 0,200, 75 )
   trestbps = st.sidebar.slider('Resting Blood Pressure', 60,200, 126 )
@@ -66,7 +66,7 @@ def user_report():
 
 
 
-# PATIENT DATA
+
 user_data = user_report()
 st.subheader('Patient Data')
 st.write(user_data)
@@ -74,26 +74,26 @@ st.write(user_data)
 
 
 
-# MODEL
+
 rf  = RandomForestClassifier()
 rf.fit(x_train, y_train)
 user_result = rf.predict(user_data)
 
 
 
-# VISUALISATIONS
+
 st.title('Graphical Patient Report')
 
 
 
-# COLOR FUNCTION
+
 if user_result[0]==0:
   color = 'blue'
 else:
   color = 'red'
 
 
-# Age vs Trestbps
+
 st.header('Resting Blood Pressure Value Graph (Yours vs Others)')
 fig_trestbps = plt.figure()
 ax3 = sns.scatterplot(x = 'Age', y = 'Resting Blood Pressure', data = df, hue = 'Outcome' , palette='Purples')
@@ -104,7 +104,7 @@ plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_trestbps)
 
 
-# Age vs Chol
+
 st.header('Cholestrol Value Graph (Yours vs Others)')
 fig_i = plt.figure()
 ax9 = sns.scatterplot(x = 'Age', y = 'Cholestrol', data = df, hue = 'Outcome', palette='rainbow')
@@ -115,7 +115,6 @@ plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_i)
 
 
-# Age vs Thalach
 st.header('Maximum Heart Rate Achieved Value Graph (Yours vs Others)')
 fig_thalach = plt.figure()
 ax5 = sns.scatterplot(x = 'Age', y = 'Maximum Heart Rate Achieved', data = df, hue = 'Outcome', palette='Blues')
@@ -126,7 +125,7 @@ plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_thalach)
 
 
-# Age vs Oldpeak
+
 st.header('ST Depression Induced by Exercise Value Graph (Yours vs Others)')
 fig_oldpeak = plt.figure()
 ax11 = sns.scatterplot(x = 'Age', y = 'ST Depression Induced by Exercise', data = df, hue = 'Outcome', palette='Greens')
@@ -137,7 +136,7 @@ plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_oldpeak)
 
 
-# Age vs Ca
+
 st.header('Number of major vessels coloured by Flouroscopy Value Graph (Yours vs Others)')
 fig_ca = plt.figure()
 ax13 = sns.scatterplot(x = 'Age', y = 'Number of major vessels coloured by Flouroscopy', data = df, hue = 'Outcome', palette='rocket')
@@ -151,7 +150,7 @@ st.pyplot(fig_ca)
 
 
 
-# OUTPUT
+
 st.subheader('Your Report: ')
 output=''
 if user_result[0]==0:
