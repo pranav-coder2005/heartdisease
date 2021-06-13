@@ -18,7 +18,7 @@ st.markdown('''
 - Datset: Cleveland and Hungarian heart disease dataset
 - Note: User inputs are taken from the sidebar. It is located at the top left of the page (arrow symbol). The values of the parameters can be changed from the sidebar.
 
-Dataset creators:
+  Dataset creators:
 - Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.
 - University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.
 - University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.
