@@ -158,7 +158,18 @@ if user_result[0]==0:
 else:
   output = 'Unfortunately, it is likely that you may be having a heart disease.'
 st.title(output)
-st.subheader('Accuracy: ')
-st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
+#st.subheader('Accuracy: ')
+#st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
 
-st.subheader('Lets raise awareness about Cardiovascular Health')
+
+
+
+#Most important for users
+st.subheader('Lets raise awareness for cardiovascular health and increase awareness about cardiovascular diseases.')
+st.write("World Diabetes Day: 29 September")
+
+st.sidebar.subheader("""An article about this app: https://proskillocity.blogspot.com/2021/05/heart-disease-detector-web-app.html""")
+st.write("Dataset License: Creative Commons Attribution 4.0 International (CC BY 4.0)")
+
+st.write("Disclaimer: This is just a learning project based on one particular dataset so please do not depend on it to actually know if you have any cardiovascular diseases or not. It might still be a false positive or false negative. A doctor is still the best fit for the determination of such diseases.")
+
