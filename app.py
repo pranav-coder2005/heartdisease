@@ -1,5 +1,5 @@
 #Heart disease detector, gotta think of some cool name, these are getting boring
-#85%+accuracy, not bad i guess 
+#85%+accuracy, not bad I guess 
 
 
 
@@ -21,7 +21,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import seaborn as sns
-
+from PIL import Image
 
 #about 
 st.markdown('''
@@ -186,3 +186,6 @@ st.write("Dataset License: Creative Commons Attribution 4.0 International (CC BY
 
 st.write("Disclaimer: This is just a learning project based on one particular dataset so please do not depend on it to actually know if you have any cardiovascular diseases or not. It might still be a false positive or false negative. A doctor is still the best fit for the determination of such diseases.")
 
+image = Image.open('Bioinformatics.jpg')
+
+st.image(image, use_column_width=True)
