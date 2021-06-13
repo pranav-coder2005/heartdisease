@@ -1,3 +1,4 @@
+#import statements, nice!
 import streamlit as st
 import pandas as pd
 from PIL import Image
@@ -10,7 +11,7 @@ from sklearn.model_selection import train_test_split
 import seaborn as sns
 
 
-
+#about 
 st.markdown('''
 # Heart Disease Detector 
 - This app detects if you have a cardiovascular disease based on Machine Learning!
@@ -26,22 +27,23 @@ st.markdown('''
 ''')
 st.write('---')
 
+#obtain dataset
 df = pd.read_csv(r'heart.csv')
 
-
+#titles
 st.title('Heart Disease Detector')
 st.sidebar.header('Patient Data')
 st.subheader('Training Dataset')
 st.write(df.describe())
 
 
-
+#training
 x = df.drop(['Outcome'], axis = 1)
 y = df.iloc[:, -1]
 x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random_state = 0)
 
 
-
+#user report
 def user_report():
   age = st.sidebar.slider('Age', 0,200, 75 )
   trestbps = st.sidebar.slider('Resting Blood Pressure', 60,200, 126 )
@@ -94,7 +96,7 @@ else:
   color = 'red'
 
 
-
+#rbp
 st.header('Resting Blood Pressure Value Graph (Yours vs Others)')
 fig_trestbps = plt.figure()
 ax3 = sns.scatterplot(x = 'Age', y = 'Resting Blood Pressure', data = df, hue = 'Outcome' , palette='Purples')
@@ -105,7 +107,7 @@ plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_trestbps)
 
 
-
+#chol, 2013 damn it
 st.header('Cholestrol Value Graph (Yours vs Others)')
 fig_i = plt.figure()
 ax9 = sns.scatterplot(x = 'Age', y = 'Cholestrol', data = df, hue = 'Outcome', palette='rainbow')
@@ -115,7 +117,7 @@ plt.yticks(np.arange(100,750,50))
 plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_i)
 
-
+#Hmax
 st.header('Maximum Heart Rate Achieved Value Graph (Yours vs Others)')
 fig_thalach = plt.figure()
 ax5 = sns.scatterplot(x = 'Age', y = 'Maximum Heart Rate Achieved', data = df, hue = 'Outcome', palette='Blues')
@@ -126,7 +128,7 @@ plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_thalach)
 
 
-
+#STDIE
 st.header('ST Depression Induced by Exercise Value Graph (Yours vs Others)')
 fig_oldpeak = plt.figure()
 ax11 = sns.scatterplot(x = 'Age', y = 'ST Depression Induced by Exercise', data = df, hue = 'Outcome', palette='Greens')
@@ -137,7 +139,7 @@ plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_oldpeak)
 
 
-
+#FCV
 st.header('Number of major vessels coloured by Flouroscopy Value Graph (Yours vs Others)')
 fig_ca = plt.figure()
 ax13 = sns.scatterplot(x = 'Age', y = 'Number of major vessels coloured by Flouroscopy', data = df, hue = 'Outcome', palette='rocket')
@@ -151,7 +153,7 @@ st.pyplot(fig_ca)
 
 
 
-
+#Final Report
 st.subheader('Your Report: ')
 output=''
 if user_result[0]==0:
@@ -159,8 +161,6 @@ if user_result[0]==0:
 else:
   output = 'Unfortunately, it is likely that you may be having a heart disease.'
 st.title(output)
-#st.subheader('Accuracy: ')
-#st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
 
 
 
