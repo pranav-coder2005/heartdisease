@@ -1,4 +1,16 @@
+#Heart disease detector, gotta think of some cool name, these are getting boring
+#85%+accuracy, not bad i guess 
+
+
+
+
+
 #import statements, nice!
+
+
+
+
+
 import streamlit as st
 import pandas as pd
 from PIL import Image
