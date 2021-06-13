@@ -179,7 +179,7 @@ st.title(output)
 
 #Most important for users
 st.subheader('Lets raise awareness for cardiovascular health and increase awareness about cardiovascular diseases.')
-st.write("World Diabetes Day: 29 September")
+st.write("World Heart Day: 29 September")
 
 st.sidebar.subheader("""An article about this app: https://proskillocity.blogspot.com/2021/05/heart-disease-detector-web-app.html""")
 st.write("Dataset License: Creative Commons Attribution 4.0 International (CC BY 4.0)")
