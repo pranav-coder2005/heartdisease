@@ -67,7 +67,7 @@ def user_report():
   
 
   user_report_data = {
-      'sex': sex
+      'sex': sex,
       'age':age,
       'trestbps':trestbps,
       'chol':chol,
