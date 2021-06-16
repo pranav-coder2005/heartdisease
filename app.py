@@ -49,6 +49,8 @@ st.subheader('Training Dataset')
 st.write(df.describe())
 
 
+
+
 #training
 x = df.drop(['Outcome'], axis = 1)
 y = df.iloc[:, -1]
@@ -64,6 +66,10 @@ def user_report():
   oldpeak = st.sidebar.slider('ST Depression Induced by Exercise', 0.0,5.0, 2.50 )
   ca = st.sidebar.slider('Number of major vessels coloured by Flouroscopy', 0,5, 2 )
   sex = st.sidebar.selectbox('Sex',('male','female'))
+  sex_n = 1
+  if sex=='male': 
+    sex_n = 1
+  else sex_n=0
 
   user_report_data = {
       'age':age,
@@ -72,7 +78,8 @@ def user_report():
       'thalach':thalach,
       'oldpeak':oldpeak,
       'ca':ca,
-      'sex': sex,
+      'sex': sex_n,
+    
          
   }
   report_data = pd.DataFrame(user_report_data, index=[0])
