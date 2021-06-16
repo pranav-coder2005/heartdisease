@@ -57,6 +57,7 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 
 #user report
 def user_report():
+  sex = st.sidebar.selectbox('Sex',('male','female'))
   age = st.sidebar.slider('Age', 0,200, 75 )
   trestbps = st.sidebar.slider('Resting Blood Pressure', 60,200, 126 )
   chol = st.sidebar.slider('Cholestrol', 100,500, 330 )
@@ -66,6 +67,7 @@ def user_report():
   
 
   user_report_data = {
+      'sex': sex
       'age':age,
       'trestbps':trestbps,
       'chol':chol,
