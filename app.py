@@ -69,7 +69,7 @@ def user_report():
   sex_n = 1
   if sex=='male': 
     sex_n = 1
-  else sex_n=0
+  else: sex_n=0
 
   user_report_data = {
       'age':age,
