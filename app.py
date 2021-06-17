@@ -63,7 +63,7 @@ def user_report():
   trestbps = st.sidebar.slider('Resting Blood Pressure', 60,200, 126 )
   chol = st.sidebar.slider('Cholestrol', 100,600, 330 )
   thalach = st.sidebar.slider('Maximum Heart Rate Achieved', 60,250, 146 )
-  oldpeak = st.sidebar.slider('ST Depression Induced by Exercise', 0.0,7.5.0, 2.50 )
+  oldpeak = st.sidebar.slider('ST Depression Induced by Exercise', 0.0,7.5, 2.50 )
   ca = st.sidebar.slider('Number of major vessels coloured by Flouroscopy', 0,5, 2 )
   
   
