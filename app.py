@@ -59,11 +59,11 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.6, random
 
 #user report
 def user_report():
-  age = st.sidebar.slider('Age', 0,200, 75 )
+  age = st.sidebar.slider('Age', 0,90, 55 )
   trestbps = st.sidebar.slider('Resting Blood Pressure', 60,200, 126 )
-  chol = st.sidebar.slider('Cholestrol', 100,500, 330 )
+  chol = st.sidebar.slider('Cholestrol', 100,600, 330 )
   thalach = st.sidebar.slider('Maximum Heart Rate Achieved', 60,250, 146 )
-  oldpeak = st.sidebar.slider('ST Depression Induced by Exercise', 0.0,5.0, 2.50 )
+  oldpeak = st.sidebar.slider('ST Depression Induced by Exercise', 0.0,7.5.0, 2.50 )
   ca = st.sidebar.slider('Number of major vessels coloured by Flouroscopy', 0,5, 2 )
   
   
