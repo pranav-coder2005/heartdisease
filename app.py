@@ -54,7 +54,7 @@ st.write(df.describe())
 #training
 x = df.drop(['Outcome'], axis = 1)
 y = df.iloc[:, -1]
-x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random_state = 0)
+x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.6, random_state = 0)
 
 
 #user report
