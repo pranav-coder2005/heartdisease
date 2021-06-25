@@ -187,7 +187,7 @@ st.write("World Heart Day: 29 September")
 
 st.sidebar.subheader("""An article about this app: https://proskillocity.blogspot.com/2021/05/heart-disease-detector-web-app.html""")
 st.write("Dataset License: Creative Commons Attribution 4.0 International (CC BY 4.0)")
-st.wrtite("This dataset is also available on the UC Irvine Machine Learning Repository")
+st.write("This dataset is also available on the UC Irvine Machine Learning Repository")
 
 st.write("Disclaimer: This is just a learning project based on one particular dataset so please do not depend on it to actually know if you have any cardiovascular diseases or not. It might still be a false positive or false negative. A doctor is still the best fit for the determination of such diseases.")
 
